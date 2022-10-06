@@ -1,28 +1,6 @@
 from django.db import models
 
-
-class Categoria(models.Model):
-    descricao = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.descricao
-
-
-class Editora(models.Model):
-    nome = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.nome
-
-class Autor(models.Model):
-    nome = models.CharField(max_length=255)
-    email = models.EmailField()
-
-    def __str__(self):
-        return self.nome
-
-    class Meta:
-        verbose_name_plural = "Autores"
+from core.models import Autor, Categoria, Editora
 
 
 class Livro(models.Model):
@@ -39,4 +17,4 @@ class Livro(models.Model):
     autores = models.ManyToManyField(Autor, related_name="livros")
 
     def __str__(self):
-        return f'{self.titulo} ({self.quantidade})'
+        return f"{self.titulo} ({self.quantidade})"
