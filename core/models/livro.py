@@ -1,6 +1,6 @@
 from django.db import models
-
 from core.models import Autor, Categoria, Editora
+from media.models import Image
 
 
 class Livro(models.Model):
@@ -15,6 +15,14 @@ class Livro(models.Model):
         Editora, on_delete=models.PROTECT, related_name="livros"
     )
     autores = models.ManyToManyField(Autor, related_name="livros")
+    capa = models.ForeignKey(
+        Image,
+        related_name="+",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        default=None,
+    )
 
     def __str__(self):
         return f"{self.titulo} ({self.quantidade})"
