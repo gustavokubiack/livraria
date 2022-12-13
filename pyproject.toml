@@ -2,11 +2,11 @@
 name = "livraria"
 version = "0.1.0"
 description = ""
-authors = ["gustavokubiack <guukubiack@gmail.com>"]
+authors = ["Gustavo Kubiack <guukubiack@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-Django = "^4.1"
+Django = "^4.0"
 djangorestframework = "^3.13.1"
 django-cors-headers = "^3.13.0"
 gunicorn = "^20.1.0"
@@ -14,13 +14,17 @@ whitenoise = "^6.2.0"
 djangorestframework-simplejwt = "^5.2.0"
 python-magic = "^0.4.27"
 Pillow = "^9.2.0"
-drf-spectacular = "^0.24.2"
-isort = "^5.10.1"
+drf-spectacular = "^0.24.0"
 django-environ = "^0.9.0"
+libmagic = "^1.0"
 mysqlclient = "^2.1.1"
 
 [tool.poetry.dev-dependencies]
-black = {version = "^22.8.0", allow-prereleases = true}
+black = {version = "^22.6.0", allow-prereleases = true}
+isort = "^5.10.1"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.10.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
